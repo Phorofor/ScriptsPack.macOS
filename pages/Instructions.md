@@ -1,6 +1,6 @@
 # Manual Installation
 
-**1.** Open AppleScript Editor OR Script Editor (in later macOS versions) from the Utilities folder in /Applications/Utilities 
+**1.** Open AppleScript Editor OR Script Editor (the names of default apps is changed in later macOS versions) from the Utilities folder in /Applications/Utilities 
 ![Step1](Images/Step_1.png)
 
 **2.** Click 'AppleScript Editor' on the top left corner of the menu bar.
