@@ -18,11 +18,11 @@
 
 **9.** Drag the desired scripts into any location in that folder you want. I recommend creating a folder for those scripts to keep it organised. Once you add or create a file in that folder, you'll need to authenticate with a administrator's password. If you wish to install them for your user only see step 7A.
 
-**10.** The scripts should appear now when you click the script icon in the menu bar. You can move them outside that folder so it won't show those items.
+**11.** The scripts should appear now when you click the script icon in the menu bar. You can move them outside that folder so it won't show those items.
 
-**11.** If you want to leave the scripts elsewhere you can, but it won't appear in the script menu and you it won't lead to directly load the scripts, you will have to run the scripts in AppleScript or Automator to get it to work.
+**12.** If you want to leave the scripts elsewhere you can, but it won't appear in the script menu and you it won't lead to directly load the scripts, you will have to run the scripts in AppleScript or Automator to get it to work.
 
-**10.**  Enjoy! If you're not satisfied or find these scripts useless I would recommended deleting them immediately (by dragging them to the trash and emptying it) to avoid the pain when you use these scripts! You can also make an alias into the user scripts folder that link to these scripts. You don't actually have to drag the folder there. You cannot use the automated installer to remove the Scripts Pack. You'll just have to delete the folder to remove it.
+**13.**  Enjoy! If you're not satisfied or find these scripts useless I would recommended deleting them immediately (by dragging them to the trash and emptying it) to avoid the pain when you use these scripts! You can also make an alias into the user scripts folder that link to these scripts. You don't actually have to drag the folder there. You cannot use the automated installer to remove the Scripts Pack. You'll just have to delete the folder to remove it.
 
 ## What what!? It didn't work!
 
