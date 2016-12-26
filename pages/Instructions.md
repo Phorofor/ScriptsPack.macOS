@@ -3,12 +3,12 @@
 **1.** Open AppleScript Editor OR Script Editor (the names of default apps is changed in later macOS versions) from the Utilities folder in /Applications/Utilities 
 
 <p align="center">
-  <img src="Images/Step_1.png" height="32%" width="32%">
+  <img src="Images/Step_1.png">
 </p>
 
 **2.** Click 'AppleScript Editor' on the top left corner of the menu bar.
 <p align="center">
-  <img src="Images/Step_2.png" height="50%" width="50%">
+  <img src="Images/Step_2.png" height="35%" width="35%">
 </p>
 
 **3.** A drop down menu should appear. Click on 'Preferences…' (or you can use ⌘ ,)
@@ -18,7 +18,7 @@
 **5.** Click the 'Show Script menu in menu bar' if it doesn't have a check mark already.
 
 <p align="center">
-  <img src="Images/Step_5.png" width="50%">
+  <img src="Images/Step_5.png" width="75%" height="75%">
 </p>
 
 **6.** The Script icon should appear in the menu bar, then click on the Script icon.
@@ -26,7 +26,7 @@
 **7.** Select 'Open Scripts Folder' if you want to add the scripts to only the current account you're using. From here you can place the script files anywhere you want in that location. I recommend creating a folder for it so it doesn't get messy.
 
 <p align="center">
-  <img src="Images/Step_7.png" height="50%" width="50%">
+  <img src="Images/Step_7.png" height="35%" width="35%">
 </p>
 
 **8.** Mouse over the 'Open Scripts Folder' option and wait a few seconds for another drop down menu to appear. Click 'Open User Scripts Folder'. This will bring you to a folder located under ``~/Library/Scripts/``. Drag the Scripts Pack Folder into that folder.
