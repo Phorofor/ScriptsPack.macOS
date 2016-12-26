@@ -22,8 +22,8 @@
 
 **8.** Mouse over the 'Open Scripts Folder' option and wait a few seconds for another drop down menu to appear. Click 'Open User Scripts Folder'.
 
-## To add them as System Scripts
-**9.** Drag the desired scripts into any location in that folder you want. I recommend creating a folder for those scripts to keep it organised. Once you add or create a file in that folder, you'll need to authenticate with a administrator's password. If you wish to install them for your user only see step 10.
+## Add as System Scripts
+**9.** Drag the desired scripts into any location in that folder you want. I recommend creating a folder for those scripts to keep it organised. Once you add or create a file in that folder, you'll need to authenticate with a administrator's password. This is a bit more secure as other applications will be unable to modify these scripts without the appropriate priviledges. If you wish to install them for your user only see step 10.
 
 **10.** The scripts should appear now when you click the script icon in the menu bar. You can move them outside that folder so it won't show those items.
 
