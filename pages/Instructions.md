@@ -20,16 +20,14 @@
 
 ![Step7](Images/Step_7.png)
 
-**8.** Mouse over the 'Open Scripts Folder' option and wait a few seconds for another drop down menu to appear. Click 'Open User Scripts Folder'.
+**8.** Mouse over the 'Open Scripts Folder' option and wait a few seconds for another drop down menu to appear. Click 'Open User Scripts Folder'. This will bring you to a folder located under ``~/Library/Scripts/``. Drag the Scripts Pack Folder into that folder.
 
 ## Add as System Scripts
-**9.** Drag the desired scripts into any location in that folder you want. I recommend creating a folder for those scripts to keep it organised. Once you add or create a file in that folder, you'll need to authenticate with a administrator's password. This is a bit more secure as other applications will be unable to modify these scripts without the appropriate priviledges. If you wish to install them for your user only see step 10.
+**9.** If you want to install it under the System Scripts folder under ``/Library/Scripts/``, you can do so by choosing the 'Open Computer Scripts' folder instead (or by navigating there yourself). You'll need to authenticate with a administrator's password. This is a bit more secure as other applications will be unable to modify these scripts without the appropriate priviledges. If you wish to install them for your user only see step 6.
 
 **10.** The scripts should appear now when you click the script icon in the menu bar. You can move them outside that folder so it won't show those items.
 
-**11.** If you want to leave the scripts elsewhere you can, but it won't appear in the script menu and you it won't lead to directly load the scripts, you will have to run the scripts in AppleScript or Automator to get it to work.
-
-**12.**  Enjoy! If you're not satisfied or find these scripts useless I would recommended deleting them immediately (by dragging them to the trash and emptying it) to avoid the pain when you use these scripts! You can also make an alias into the user scripts folder that link to these scripts. You don't actually have to drag the folder there. You cannot use the automated installer to remove the Scripts Pack. You'll just have to delete the folder to remove it.
+**11.**  Enjoy! If you're not satisfied or find these scripts useless I would recommended deleting them immediately (by dragging them to the trash and emptying it) to avoid the pain when you use these scripts! You can also make an alias into the user scripts folder that link to these scripts. You don't actually have to drag the folder there. You cannot use the automated installer to remove the Scripts Pack. You'll just have to delete the folder to remove it.
 
 ## What what!? It didn't work!
 
