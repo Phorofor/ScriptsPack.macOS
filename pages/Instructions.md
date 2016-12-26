@@ -1,10 +1,10 @@
 # Manual Installation
 
 **1.** Open AppleScript Editor OR Script Editor (in later macOS versions) from the Utilities folder in /Applications/Utilities 
-
-![Test](https://upload.wikimedia.org/wikipedia/en/a/ad/MacOS_Sierra_Desktop.png "Okay")
+![Step1](Images/Step_1.png)
 
 **2.** Click 'AppleScript Editor' on the top left corner of the menu bar.
+![Step2](Images/Step_2.png)
 
 **3.** A drop down menu should appear. Click on 'Preferences…' (or you can use ⌘ ,)
 
@@ -12,9 +12,13 @@
 
 **5.** Click the 'Show Script menu in menu bar' if it doesn't have a check mark already.
 
-**6.** The Script icon should appear in the menu bar then click on the Script icon.
+![Step5](Images/Step_5.png)
+
+**6.** The Script icon should appear in the menu bar, then click on the Script icon.
 
 **7.** Select 'Open Scripts Folder' if you want to add the scripts to only the current account you're using. From here you can place the script files anywhere you want in that location. I recommend creating a folder for it so it doesn't get messy.
+
+![Step7](Images/Step_7.png)
 
 **8.** Mouse over the 'Open Scripts Folder' option and wait a few seconds for another drop down menu to appear. Click 'Open User Scripts Folder'.
 
