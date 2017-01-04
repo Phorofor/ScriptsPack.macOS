@@ -34,7 +34,7 @@ Scripts Pack has arrived. Preferences checkers, version checkers and some more! 
 
 - Initial Test Release
 
-#### Features need to be added/improved:
+**Features need to be added/improved:**
 - Make it easier and quicker to access
 - List mode to be able to view scripts in one single applescript (probably won't happen)
 - Add a window title with custom icons with the 'display alert' function (might not be possible)
