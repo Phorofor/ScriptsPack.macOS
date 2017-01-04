@@ -1,2 +1,10 @@
-osx_image: xcode8.2 
-./install: "/Scripts Pack - create-dmg/BuildScriptsPackImage.sh"
+language: 
+  - python
+
+
+os:
+  - osx
+  - osx_image: xcode8.2 
+
+script: 
+  - "/Scripts Pack - create-dmg/BuildScriptsPackImage.sh"
