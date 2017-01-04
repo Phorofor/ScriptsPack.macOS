@@ -1,0 +1,131 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504
+\cocoascreenfonts1{\fonttbl\f0\fmodern\fcharset0 Courier;\f1\fswiss\fcharset0 CenturyGothic;\f2\fnil\fcharset0 Verdana;
+\f3\fmodern\fcharset0 Courier-Bold;}
+{\colortbl;\red255\green255\blue255;\red217\green11\blue0;\red0\green31\blue103;\red0\green0\blue255;
+}
+{\*\expandedcolortbl;\csgray\c100000;\csgenericrgb\c85098\c4314\c0;\csgenericrgb\c0\c12157\c40392;\csgenericrgb\c0\c0\c100000;
+}
+{\info
+{\title Remove Scripts Pack Manually}
+{\subject Scripts Pack}
+{\doccomm Removing Scripts Pack manually without having to use its Installer which may sometimes cause errors.}
+{\author Jetties (J.J.T)}
+{\*\copyright \'a9 2012 - Jetties}
+{\keywords scripts, uninstall, removal, information}}\paperw11900\paperh16840\margl1440\margr1440\vieww11140\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\qc\partightenfactor0
+
+\f0\fs50 \cf0 Scripts Pack\
+
+\fs28 Remove Manually
+\f1\b\fs24 \ul \ulc0 \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f2 \cf2 \ulnone NOTE:\
+
+\b0 \cf0 This only applies to people who have used the script to install but are having problems with uninstalling using the script provided in the AppleScript based installer. If you've installed manually by using the 'drag 'n' drop' folder method, you just need to delete that folder.
+\b \ul \
+\
+
+\b0 \ulnone If you've installed the Scripts Pack using the Installer provided and are getting 'an expected error' while attempting to uninstall, here's one of the ways to remove it manually which should be able to work:\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\qc\partightenfactor0
+\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\b \cf3 Step 1
+\b0 \cf0 . Pressing/Holding the keys 'Command-Shift-G ' at the same time while Finder is active, a dialog box should appear. Paste/enter this location into the field:\
+
+\f3\b \
+~/Library/Scripts
+\f2 \
+\
+\cf3 Step 2
+\b0 \cf0 . Drag the 'Scripts Pack' folder to the Trash & empty the trash. (if you have any scripts in that folder you use personally use or want to keep that current version of the Scripts Pack, you may wish to place that folder somewhere else. You can rename it if you wish to.)\
+\
+
+\b \cf3 Step 3
+\b0 \cf0 . You've uninstalled the Scripts Pack successfully! Give yourself a medal. (okay, not really. Just good work!)  If you wanted to update or reinstall the Scripts Pack, then you can do that now.\
+\
+If you've followed the simple steps above it should've worked. If not you may wish to explore an alternative way that's right for you.\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\b \cf0 \ul Optional: Removing Preferences & Services\
+\
+
+\b0 \ulnone Scripts Pack may create preferences which is used by certain scripts so it can remember the last remembered file and so forth. These files may take a minimal amount of space. If you wish to remove it navigate to the location:\
+\
+You can paste this into the 'Go to Folder\'85' field for easy access using Command+Shift+G when the Finder is active:\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f3\b \cf0 ~/Library/Preferences\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 Now delete the files:\
+\
+com.Phorofor.ScriptsPack.plist.lockfile\
+com.Phorofor.ScriptsPack.plist\
+\
+Then empty the Trash. You will loose all your preferences for any script in the Scripts Pack. If none of those files exist you may not have used a script that saves custom objects for later use.\
+\
+If you want to delete services from the Scripts Pack you don't want navigate to:
+\f3\b \
+\
+~/Library/Services\
+\
+
+\f2\b0 You'll see all of the services that you have installed for your user account, delete the services you want to delete, if you remove a service they will also disappear from the Services preferences located in the Keyboard preferences.\
+\
+You can manage your services and its hotkeys by navigating to:\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0 \cf0 Apple (\uc0\u63743 ) > {\field{\*\fldinst{HYPERLINK "file:///Applications/System%20Preferences.app/"}}{\fldrslt System Preferences\'85}} > {\field{\*\fldinst{HYPERLINK "file:///System/Library/PreferencePanes/Keyboard.prefPane/"}}{\fldrslt Keyboard}} > Keyboard Shortcuts
+\f2 \
+then click Services on the list which should be towards the left.
+\f3\b \
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f2 \cf0 \ul Terminal Method (Preferences Only)\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f3 \cf0 \ulnone \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 If you've got access to a Terminal based application (an other alternative is that you can use X11's xTerm) you can enter this command:\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0 \cf0 defaults delete com.JJT.ScriptsPack\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f2 \cf0 Check to make sure the command is correct, then press the return/enter key. The preferences for the Scripts Pack should now be deleted after following the steps correctly, you cannot get it back unless you've backed it up.
+\f0 \
+\
+
+\f2 Apple's built-in Terminal application should be located in the folder:\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0 \cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f3\b \cf0 /Applications/Utilities/\
+\
+\pard\pardeftab720\ri380\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "file:///Applications/Utilities/Terminal.app/"}}{\fldrslt 
+\f0\b0 \cf4 \ul \ulc4 Go to Terminal.app\'85}}
+\f0\b0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "file:///Applications/Utilities/X11.app"}}{\fldrslt \cf0 Go to X11.app\'85
+\f3\b \
+}}\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f3\b \cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 There should be an application called Terminal. Double-click that to open it, you can use any other Terminal emulator if you don't like Apple's built-in Terminal emulator.}
