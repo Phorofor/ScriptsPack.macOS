@@ -3,7 +3,7 @@
 ## Latest
 Kind of left this since I no longer use macOS for now. I've retested this to ensure that these scripts will at least run (some features may have been removed in recent macOS versions so some scripts won't be effective). Nonetheless, it has not been forgotten and is now available on [this GitHub respository](https://github.com/Phorofor/ScriptsPack.macOS). Here's a list of changes since the first iteration of the Scripts Pack:
 
-- The copyright information is now updated to feature the year range from 2012 to 2017 to stay relevant
+- The copyright information is now updated to feature the year range from 2012 to 2017 to stay relevant.
 
 - The disk image for the Scripts Pack now contains a symbolic link to the System Scripts folder and the Information folder.
 
@@ -19,13 +19,13 @@ Kind of left this since I no longer use macOS for now. I've retested this to ens
 
 - Removed Growl scripts as they were imported from a corrupted backup. The dialog to Register with Growl Support has also been removed as it points to the corrupted script.
 
-- Removed some other template scripts as they were imported from a corrupted backup
+- Removed some other template scripts as they were imported from a corrupted backup.
 
 - Refined the Installer script - It is no longer dependant on the location of the Scripts Pack volume and with the Users directory being at /Users. There is less dialog prompts involved and defaults as an "Uninstaller" when it detects .ScriptsVersion at the default location. The 'splash screen' has been removed as it is an outdated image.
 
 - Stopped using ``tell application "Dock"`` as it doesn't want to work in later macOS versions and is replaced with telling "System Events" instead. No Dock icon will appear in the dialog, though.
 
-- Most scripts are now in ``.applescript`` plain text format for better previewing and to use the least amount of space possible
+- Most scripts are now in ``.applescript`` plain text format for better previewing and to use the least amount of space possible.
 
 - Everything else pretty much remains the same as it was.
 
@@ -34,7 +34,7 @@ Scripts Pack has arrived. Preferences checkers, version checkers and some more! 
 
 - Initial Test Release
 
-## Features need to be added/improved:
+#### Features need to be added/improved:
 - Make it easier and quicker to access
 - List mode to be able to view scripts in one single applescript (probably won't happen)
 - Add a window title with custom icons with the 'display alert' function (might not be possible)
