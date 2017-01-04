@@ -1,0 +1,11 @@
+/Builds/*.dmg
+
+.DS_Store
+Desktop.ini
+._*
+Thumbs.db
+.Spotlight-V100
+.Trashes
+venv
+node_modules
+.sass-cache
