@@ -16,7 +16,7 @@ If you've installed the Scripts Pack using the Installer provided and are gettin
 
 If you've followed the simple steps above it should've worked. If not you may wish to explore an alternative way that's right for you.
 
-Optional: Removing Preferences & Services
+## Optional: Removing Preferences & Services
 
 Scripts Pack may create preferences which is used by certain scripts so it can remember the last remembered file and so forth. These files may take a minimal amount of space. If you wish to remove it navigate to the location:
 
@@ -24,7 +24,7 @@ You can paste this into the 'Go to Folder…' field for easy access using Comman
 
 ``~/Library/Preferences``
 
-Now delete the files:
+**Now delete the files:**
 
 com.Phorofor.ScriptsPack.plist.lockfile
 com.Phorofor.ScriptsPack.plist
@@ -43,7 +43,7 @@ Apple () > System Preferences… > Keyboard > Keyboard Shortcuts
 then click Services on the list which should be towards the left.
 
 
-# Terminal Method (Preferences Only)
+## Terminal Method (Preferences Only)
 
 If you've got access to a Terminal based application (an other alternative is that you can use X11's xTerm) you can enter this command:
 
