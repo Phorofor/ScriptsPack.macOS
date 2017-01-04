@@ -1,130 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>AMApplicationBuild</key>
-	<string>330</string>
-	<key>AMApplicationVersion</key>
-	<string>2.2.1</string>
-	<key>AMDocumentVersion</key>
-	<string>2</string>
-	<key>actions</key>
-	<array>
-		<dict>
-			<key>action</key>
-			<dict>
-				<key>AMAccepts</key>
-				<dict>
-					<key>Container</key>
-					<string>List</string>
-					<key>Optional</key>
-					<true/>
-					<key>Types</key>
-					<array>
-						<string>com.apple.applescript.object</string>
-					</array>
-				</dict>
-				<key>AMActionVersion</key>
-				<string>1.0.1</string>
-				<key>AMApplication</key>
-				<array>
-					<string>Automator</string>
-				</array>
-				<key>AMParameterProperties</key>
-				<dict>
-					<key>source</key>
-					<dict/>
-				</dict>
-				<key>AMProvides</key>
-				<dict>
-					<key>Container</key>
-					<string>List</string>
-					<key>Types</key>
-					<array>
-						<string>com.apple.applescript.object</string>
-					</array>
-				</dict>
-				<key>ActionBundlePath</key>
-				<string>/System/Library/Automator/Run AppleScript.action</string>
-				<key>ActionName</key>
-				<string>Run AppleScript</string>
-				<key>ActionParameters</key>
-				<dict>
-					<key>source</key>
-					<string>property READTHIS : "The Scripts Pack was made specifically for restricted users as another option of using hidden Mac OS X settings on their computer.    Copyright (C) 2012 by user: Jetties (jetties.deviantART.com)    This program is free software: you can redistribute it and/or modify    it under the terms of the GNU General Public License as published by    the Free Software Foundation, either version 3 of the License, or    (at your option) any later version.    This program is distributed in the hope that it will be useful,    but WITHOUT ANY WARRANTY; without even the implied warranty of    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the    GNU General Public License for more details.    You should have received a copy of the GNU General Public License    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;."(*Do not repetitivly activate this script using your hotkey set for this serviceThis will not work if run from the Automator*)set useR to do shell script "whoami"set startTime to (current date)tell application "Finder"	set trashSize to (do shell script "du -h ~/.Trash | tail -rn1 | awk '{print \"\" $1}'")	set noItems to (count (every item of the trash))end tell-- Empty started Growl notificationtry	tell application "System Events"		set isRunning to (count of (every process whose bundle identifier is "com.Growl.GrowlHelperApp")) &gt; 0	end tell		set defaultIcns to (path to system folder as string) &amp; "Library:CoreServices:Dock.app:Contents:Resources:trashfull.png" as alias		if isRunning then				tell application id "com.Growl.GrowlHelperApp"			if noItems &lt; "1" then				notify with name ¬					"File Deletion - Complete" title ¬					"Secure Empty Trash - No Items" description ¬					"There are no items in the Trash to be erased at this time." application name "Scripts Pack" icon of file defaultIcns			else				notify with name ¬					"File Deletion - Started" title ¬					"Secure Empty Trash Started" description ¬					"The Trash will begin being securely emptied for " &amp; useR &amp; " which contains " &amp; noItems &amp; " item(s) (" &amp; trashSize &amp; ")." application name "Scripts Pack" icon of file defaultIcns			end if		end tell	end ifend try-- [END] Empty started Growl notification# You can change the amount of times it erases by modifying the flags in the command. Do not edit ~./Trash/* with ~ or somewhere where important files are or may be lost forever unless if backed up.try	do shell script "srm -rfvm ~/.Trash/*"on error	display alert "Secure Empty Trash - Expected Error" message "An error occured with this reminder script. You should investigate the problem. If the problem persists without any success you should stop using this script." as warning buttons ["OK"] cancel button 1 default button 1end try-- Empty complete Growl notificationtry	tell application "System Events"		set isRunning to (count of (every process whose bundle identifier is "com.Growl.GrowlHelperApp")) &gt; 0	end tell	set defaultIcns to (path to system folder as string) &amp; "Library:CoreServices:Dock.app:Contents:Resources:trashempty.png" as alias		set EndTime to (get current date)	set duration to EndTime - startTime		set mins to duration div minutes	set secs to duration mod minutes		if isRunning then				set CompSuccess to "Started: " &amp; (startTime as text) &amp; return &amp; "Ended: " &amp; (EndTime as text) &amp; return &amp; return &amp; "It took " &amp; TimeToText(EndTime - startTime)		tell application id "com.Growl.GrowlHelperApp"			if noItems &gt; "0" then				notify with name ¬					"File Deletion - Complete" title ¬					"Secure Empty Trash Completed" description ¬					CompSuccess &amp; " to securely erase " &amp; noItems &amp; " item(s) with a total size of " &amp; trashSize &amp; "." application name "Scripts Pack" icon of file defaultIcns			end if		end tell			end if	-- [END] Empty complete Growl notificationend try-- Slightly modified of http://macscripter.net/viewtopic.php?id=34653 - Timeron TimeToText(TheTime)		if (class of TheTime) as text is "integer" then		set TimeString to 1000000 + 10000 * (TheTime mod days div hours)		set TimeString to TimeString + 100 * (TheTime mod hours div minutes)		set TimeString to (TimeString + (TheTime mod minutes)) as text		tell TimeString to set TheTime to (text -6 thru -5) &amp; " hour(s) " &amp; (text -4 thru -3) &amp; " minute(s) and " &amp; (text -2 thru -1)	end if	return TheTime &amp; " second(s)"end TimeToText</string>
-				</dict>
-				<key>BundleIdentifier</key>
-				<string>com.apple.Automator.RunScript</string>
-				<key>CFBundleVersion</key>
-				<string>1.0.1</string>
-				<key>CanShowSelectedItemsWhenRun</key>
-				<false/>
-				<key>CanShowWhenRun</key>
-				<true/>
-				<key>Category</key>
-				<array>
-					<string>AMCategoryUtilities</string>
-				</array>
-				<key>Class Name</key>
-				<string>RunScriptAction</string>
-				<key>InputUUID</key>
-				<string>D1733B17-117B-4612-810B-9EF7B44D087F</string>
-				<key>Keywords</key>
-				<array>
-					<string>Run</string>
-				</array>
-				<key>OutputUUID</key>
-				<string>98548601-401D-4A25-A0C8-28BDA7E736B2</string>
-				<key>UUID</key>
-				<string>11E272B3-3B80-4F44-8973-9202CBD37FA2</string>
-				<key>UnlocalizedApplications</key>
-				<array>
-					<string>Automator</string>
-				</array>
-				<key>arguments</key>
-				<dict>
-					<key>0</key>
-					<dict>
-						<key>default value</key>
-						<string>on run {input, parameters}
-	
-	(* Your script goes here *)
-	
-	return input
-end run</string>
-						<key>name</key>
-						<string>source</string>
-						<key>required</key>
-						<string>0</string>
-						<key>type</key>
-						<string>0</string>
-						<key>uuid</key>
-						<string>0</string>
-					</dict>
-				</dict>
-				<key>isViewVisible</key>
-				<true/>
-				<key>location</key>
-				<string>309.500000:450.000000</string>
-				<key>nibPath</key>
-				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/English.lproj/main.nib</string>
-			</dict>
-			<key>isViewVisible</key>
-			<true/>
-		</dict>
-	</array>
-	<key>connectors</key>
-	<dict/>
-	<key>workflowMetaData</key>
-	<dict>
-		<key>serviceInputTypeIdentifier</key>
-		<string>com.apple.Automator.nothing</string>
-		<key>serviceOutputTypeIdentifier</key>
-		<string>com.apple.Automator.nothing</string>
-		<key>serviceProcessesInput</key>
-		<integer>0</integer>
-		<key>workflowTypeIdentifier</key>
-		<string>com.apple.Automator.servicesMenu</string>
-	</dict>
-</dict>
-</plist>

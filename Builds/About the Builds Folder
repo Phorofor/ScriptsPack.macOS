@@ -1,5 +1,0 @@
-Scripts Pack Disk Image builds will be placed here
-Each build number is in the format: 1YYYYMMDD.HHMMSS
-which represents the date and time in UTC that the build took place
-and does not use an actual versioning scheme.
-
