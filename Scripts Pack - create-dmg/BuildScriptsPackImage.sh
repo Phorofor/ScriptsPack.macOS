@@ -18,9 +18,10 @@ echo "#################################################"
 
 BUILDTIMESTAMP="1$(date -u +%Y%m%d).$(date -u +%H%M%S)"
 BUILDTIMEHUMANREADABLE="$(date -u +%Y-%m-%d\ %H.%M.%S)" 
-BUILDNAME="Scripts Pack - $BUILDTIMEHUMANREADABLE.dmg"
+#BUILDNAME="Scripts Pack - $BUILDTIMEHUMANREADABLE.dmg"
+BUILDNAME="Scripts Pack.dmg"
 FOLDERTEXT="R$BUILDTIMEHUMANREADABLE"
-echo "THE BUILD TIMESTAMP IS: $BUILDTIMEHUMANREADABLE (in UTC)"
+echo "[$(date -u +%H:%M:%S)]: The build time stamp for this: $BUILDTIMEHUMANREADABLE (in UTC) and will be identified as: $BUILDTIMESTAMP"
 
 cd "$(dirname "$0")"
 # Do a cleanup if these exist
@@ -28,10 +29,11 @@ echo "[$(date -u +%H:%M:%S)]: Doing a cleanup of existing symbolic links..."
 rm -R "../Scripts Pack Source Items/System Scripts"
 rm -R "../Scripts Pack Source Items/Information"
 
+echo "Placing build time stamps into .ScriptsVersion and .ScriptsVersionBuild..."
 echo "$BUILDTIMESTAMP" > "../Scripts Pack Source Items/Scripts Pack/About Scripts Pack/.ScriptsVersion.txt"
 echo "$BUILDTIMEHUMANREADABLE" > "../Scripts Pack Source Items/Scripts Pack/About Scripts Pack/.ScriptsVersionBuild.txt"
 #cp -R ReleaseTemplateIcon "../Scripts Pack Source Items/$FOLDERTEXT"
-echo "$(date -u +%H:%M:%S): Generating symbolic links..."
+echo "[$(date -u +%H:%M:%S)]: Generating symbolic links for the System Scripts and Information directory..."
 ln -s "/Library/Scripts" "../Scripts Pack Source Items/System Scripts"
 ln -s "/Volumes/Scripts Pack/Scripts Pack/About Scripts Pack/Information.scptd/Information" "../Scripts Pack Source Items/Information"
 echo "[$(date -u +%H:%M:%S)]: Symbolic links created!"
@@ -50,4 +52,4 @@ echo "[$(date -u +%H:%M:%S)]: Starting create-dmg..."
 --icon "System Scripts" 208 147 \
 "../Builds/$BUILDNAME" \
 "../Scripts Pack Source Items"/ && rm -R "../Scripts Pack Source Items/System Scripts" && rm -R "../Scripts Pack Source Items/Information"
-echo "[$(date -u +%H:%M:%S)]: End of Build Scripts Pack Image script! Output should be in the /Builds folder!"
+echo "[$(date -u)]: End of Build Scripts Pack Image script! We should be done here."

@@ -4,11 +4,11 @@ language:
 
 osx_image: xcode8.2 
 
-before_install:
+before_script:
   - brew update
   - brew outdated xctool || brew upgrade xctool
   - brew outdated python || brew upgrade python
-  
+  - composer config github-oauth.github.com ${GH_TOKEN}
 script:
   - cd "Scripts Pack - create-dmg"
   - ls -l
@@ -16,3 +16,14 @@ script:
   - chmod +x "create-dmg"
   - chmod u+x "support/dmg-license.py"
   - "./BuildScriptsPackImage.sh"
+
+after_script:
+  - cd "../Builds"
+  
+deploy:
+  provider: releases
+  api_key: $GH_TOKEN
+  file: "Scripts Pack.dmg"
+  skip_cleanup: true
+  on:
+    tags: true
