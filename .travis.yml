@@ -19,7 +19,7 @@ script:
   - "./BuildScriptsPackImage.sh"
   
 deploy:
-  tag_name: "Scripts Pack Current Source Release"
+  tag_name: "now"
   prerelease: true
   draft: false
   name: "Scripts Pack Current Source Release"
