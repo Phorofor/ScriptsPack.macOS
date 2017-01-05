@@ -8,10 +8,8 @@ before_install:
   - brew update
   - brew outdated xctool || brew upgrade xctool
   - brew outdated python || brew upgrade python
- 
-install:
-  - ls -l
   - chmod +x "Scripts Pack - create-dmg/BuildScriptsPackImage.sh"
   - chmod +x "Scripts Pack - create-dmg/create-dmg"
   - chmod u+x "Scripts Pack - create-dmg/support/dmg-license.py"
+install:
   - "Scripts Pack - create-dmg/BuildScriptsPackImage.sh"
