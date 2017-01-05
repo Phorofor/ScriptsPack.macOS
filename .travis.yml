@@ -17,12 +17,6 @@ script:
   - chmod u+x "support/dmg-license.py"
   - echo "Starting Build Scripts Pack Image Script..."
   - "./BuildScriptsPackImage.sh"
-
-after_script:
-  - cd ".."
-  - ls -l
-  - cd ${TRAVIS_BUILD_DIR}
-  - ls -l
   
 deploy:
   #tag_name: "Current"
@@ -34,8 +28,7 @@ deploy:
   #overwrite: true
   provider: releases
   api_key: ${GH_TOKEN}
-  file: 
-     - "Scripts Pack.dmg"
+  file: "../Builds/Scripts Pack.dmg"
   skip_cleanup: true
   on:
     tags: false
