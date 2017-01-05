@@ -18,9 +18,11 @@ script:
 
 after_script:
   - cd "../Builds"
+  - ls -l
+  - echo "Testing $BUILDNAME"
   
 deploy:
-  provider: releases
+  provider: now
   api_key: $GH_TOKEN
   file: "Scripts Pack.dmg"
   skip_cleanup: true
