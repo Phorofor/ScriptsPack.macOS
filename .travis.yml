@@ -22,11 +22,11 @@ deploy:
   overwrite: true
   provider: releases
   api_key: ${GH_TOKEN}
-  file: "../Builds/Scripts Pack.dmg"
+  file: "${TRAVIS_BUILD_DIR}/Scripts Pack.dmg"
   skip_cleanup: true
   on:
     repo: Phorofor/ScriptsPack.macOS
-    tags: false
+    tags: true
     all_branches: true
     
 branches:
