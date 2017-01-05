@@ -19,17 +19,12 @@ script:
   - "./BuildScriptsPackImage.sh"
   
 deploy:
-  tag_name: "now"
-  prerelease: true
-  draft: false
-  name: "Scripts Pack Current Source Release"
-  target_commitish: now
-  body: "This is where the latest build of the Scripts Pack will be placed which is based upon the latest commit for the Scripts Pack project, expect a lot more errors and mistakes than usual. Still testing things out at the moment."
   overwrite: true
   provider: releases
   api_key: ${GH_TOKEN}
   file: "../Builds/Scripts Pack.dmg"
   skip_cleanup: true
   on:
+    repo: Phorofor/ScriptsPack.macOS
     tags: true
     all_branches: true

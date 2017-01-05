@@ -10,6 +10,8 @@ A project that I got too lazy to continue based upon users being restricted by a
 ## Building
 You don't need to build anything. In fact, it'll work just by dragging the Scripts Pack folder anywhere. For fun, you can Scripts Pack's create-dmg script. Just run ``./BuildScriptsPackImage`` when in the same directory as the create-dmg folder and ensure you have Xcode and its command-line tools installed. Its output should be placed in the ``Build`` folder.
 
+[![Build Status](https://travis-ci.org/Phorofor/ScriptsPack.macOS.svg?branch=master)](https://travis-ci.org/Phorofor/ScriptsPack.macOS)
+
 ## License
 Scripts Pack is licensed under the BSD License. See the [``License``](https://github.com/Phorofor/ScriptsPack.macOS/blob/master/License) file for more information.
 
