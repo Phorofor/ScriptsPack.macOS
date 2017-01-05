@@ -1,6 +1,7 @@
 language:
    - objective-c
    - python
+   - bash
 
 osx_image: xcode8.2 
 
@@ -20,19 +21,22 @@ script:
 after_script:
   - cd ".."
   - ls -l
+  - cd ${TRAVIS_BUILD_DIR}
+  - ls -l
   
 deploy:
-  tag_name: "Current"
-  prerelease: true
-  draft: false
-  name: "Scripts Pack Current Source Release"
-  target_commitish: now
-  body: "This is where the latest build of the Scripts Pack will be placed which is based upon the latest commit for the Scripts Pack project, expect a lot more errors and mistakes than usual. Still testing things out at the moment."
-  overwrite: true
+  #tag_name: "Current"
+  #prerelease: true
+  #draft: false
+  #name: "Scripts Pack Current Source Release"
+  #target_commitish: now
+  #body: "This is where the latest build of the Scripts Pack will be placed which is based upon the latest commit for the Scripts Pack project, expect a lot more errors and mistakes than usual. Still testing things out at the moment."
+  #overwrite: true
   provider: releases
-  api_key: $GH_TOKEN
-  file: "Builds/Scripts Pack.dmg"
+  api_key: ${GH_TOKEN}
+  file: 
+     - "Scripts Pack.dmg"
   skip_cleanup: true
   on:
-    tags: true
+    tags: false
     all_branches: true
