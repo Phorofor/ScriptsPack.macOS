@@ -50,4 +50,4 @@ echo "[$(date -u +%H:%M:%S)]: Starting create-dmg..."
 --icon "System Scripts" 208 147 \
 "../Builds/$BUILDNAME" \
 "../Scripts Pack Source Items"/ && rm -R "../Scripts Pack Source Items/System Scripts" && rm -R "../Scripts Pack Source Items/Information"
-echo "[$(date -u +%H:%M:%S)]: End of Build Scripts Pack Image script!"
+echo "[$(date -u +%H:%M:%S)]: End of Build Scripts Pack Image script! Output should be in the /Builds folder!"
