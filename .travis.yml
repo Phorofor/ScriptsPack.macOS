@@ -10,9 +10,9 @@ before_install:
   - brew outdated python || brew upgrade python
   
 script:
-  - cd $HOME
-  - cd ScriptsPack.macOS
-  - chmod +x "Scripts Pack - create-dmg/BuildScriptsPackImage.sh"
-  - chmod +x "Scripts Pack - create-dmg/create-dmg"
-  - chmod u+x "Scripts Pack - create-dmg/support/dmg-license.py"
-  - "Scripts Pack - create-dmg/BuildScriptsPackImage.sh"
+  - cd "Scripts Pack - create-dmg"
+  - ls -l
+  - chmod +x "BuildScriptsPackImage.sh"
+  - chmod +x "create-dmg"
+  - chmod u+x "support/dmg-license.py"
+  - "./BuildScriptsPackImage.sh"
