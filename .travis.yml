@@ -17,21 +17,21 @@ script:
   - "./BuildScriptsPackImage.sh"
 
 after_script:
-  - cd "../Builds"
+  - cd ".."
   - ls -l
-  - echo "Testing $BUILDNAME"
   
 deploy:
+  #tag_name: "Current"
+  #prerelease: true
+  #draft: false
+  #name: "Scripts Pack Current Source Release"
+  #target_commitish: now
+  #body: "This is where the latest build of the Scripts Pack will be placed which is based upon the latest commit for the Scripts Pack project, expect a lot more errors and mistakes than usual. Still testing things out at the moment."
+  #overwrite: true
   provider: releases
-  tag_name: "Current"
-  prerelease: true
-  draft: false
-  name: "Scripts Pack Current Source Release"
-  target_commitish: now
-  body: "This is where the latest build of the Scripts Pack will be placed which is based upon the latest commit for the Scripts Pack project, expect a lot more errors and mistakes than usual. Still testing things out at the moment."
-  overwrite: true
   api_key: $GH_TOKEN
-  file: "Scripts Pack.dmg"
+  file: "Builds/Scripts Pack.dmg"
   skip_cleanup: true
   on:
-    tags: true
+    tags: false
+    all_branches: true
