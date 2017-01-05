@@ -26,5 +26,9 @@ deploy:
   skip_cleanup: true
   on:
     repo: Phorofor/ScriptsPack.macOS
-    tags: true
+    tags: false
     all_branches: true
+    
+branches:
+  except:
+    - /^*-v[0-9]/
