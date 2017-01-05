@@ -196,6 +196,7 @@ set ResourcePath to POSIX path of ((path to me as string) & "::Scripts Pack")
 
 #& CurrentUser & "' on the disk '" & defaultHD
 try
+# The Script Menu item for running Applescripts via the menubar.
 	display alert "Load Script Menu Item in the menu bar?" message "Would you like to load the Script Menu.menu menu extra to the menubar for quick and easy access to these scripts? Clicking 'No.' does not affect anything for the menu bar." buttons ["No.", "Load Script Menu Item"] default button 2
 	if the button returned of the result is "Load Script Menu Item" then
 		do shell script "open /System/Library/CoreServices/Menu' 'Extras/Script' 'Menu.menu"
