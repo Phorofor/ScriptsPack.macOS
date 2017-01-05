@@ -14,6 +14,7 @@ script:
   - chmod +x "BuildScriptsPackImage.sh"
   - chmod +x "create-dmg"
   - chmod u+x "support/dmg-license.py"
+  - echo "Starting Build Scripts Pack Image Script..."
   - "./BuildScriptsPackImage.sh"
 
 after_script:
