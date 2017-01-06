@@ -13,8 +13,11 @@ You don't need to build anything. In fact, it'll work just by dragging the Scrip
 
 **To build the disk image:**
 ``git clone https://github.com/Phorofor/ScriptsPack.macOS.git``
+
 ``cd ScriptsPack.macOS``
+
 ``chmod +x MAKE``
+
 ``./MAKE``
 
 The disk image will mount twice, the first one being for the creation of the disk image and the final one where it has been finally completed.
