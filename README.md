@@ -21,9 +21,7 @@ You don't need to build anything. In fact, it'll work just by dragging the Scrip
 
 ``./MAKE``
 
-The disk image will mount twice, the first one being for the creation of the disk image and the final one where it has been finally completed.
-
- Its output should be placed in the ``Build`` folder.
+The disk image will mount twice, the first one being for the creation of the disk image and the final one where it has been finally completed. Its output should be placed in the ``Build`` folder.
 
 [![Build Status](https://travis-ci.org/Phorofor/ScriptsPack.macOS.svg?branch=master)](https://travis-ci.org/Phorofor/ScriptsPack.macOS)
 
