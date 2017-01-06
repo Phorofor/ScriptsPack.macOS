@@ -12,6 +12,7 @@ A project that I got too lazy to continue based upon users being restricted by a
 You don't need to build anything. In fact, it'll work just by dragging the Scripts Pack folder anywhere. For fun, you can Scripts Pack's create-dmg script. 
 
 **To build the disk image:**
+
 ``git clone https://github.com/Phorofor/ScriptsPack.macOS.git``
 
 ``cd ScriptsPack.macOS``
