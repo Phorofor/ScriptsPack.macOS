@@ -19,13 +19,13 @@ echo "#################################################"
 BUILDTIMESTAMP="1$(date -u +%Y%m%d).$(date -u +%H%M%S)"
 BUILDTIMEHUMANREADABLE="$(date -u +%Y-%m-%d\ %H.%M.%S)" 
 #BUILDNAME="Scripts Pack - $BUILDTIMEHUMANREADABLE.dmg"
-BUILDNAME="Scripts Pack.dmg"
+BUILDNAME="ScriptsPack.dmg"
 FOLDERTEXT="R$BUILDTIMEHUMANREADABLE"
 echo "[$(date -u +%H:%M:%S)]: BUILD TIME STAMP IS: $BUILDTIMEHUMANREADABLE (IN UTC) AND WILL BE IDENTIFIED AS: $BUILDTIMESTAMP"
 
 cd "$(dirname "$0")"
 # Do a cleanup if these exist
-echo "[$(date -u +%H:%M:%S)]: CLEANING UP EXISTING SYMLINKS"
+echo "[$(date +%H:%M:%S)]: CLEANING UP EXISTING SYMLINKS"
 rm -R "../Scripts Pack Source Items/System Scripts"
 rm -R "../Scripts Pack Source Items/Information"
 
@@ -33,12 +33,12 @@ echo "PLACING BUILD TIME STAMPS IN .ScriptsVersion.txt AND .ScriptsVersionBuild.
 echo "$BUILDTIMESTAMP" > "../Scripts Pack Source Items/Scripts Pack/About Scripts Pack/.ScriptsVersion.txt"
 echo "$BUILDTIMEHUMANREADABLE" > "../Scripts Pack Source Items/Scripts Pack/About Scripts Pack/.ScriptsVersionBuild.txt"
 #cp -R ReleaseTemplateIcon "../Scripts Pack Source Items/$FOLDERTEXT"
-echo "[$(date -u +%H:%M:%S)]: CREATING SYMLINKS FOR THE System Scripts AND Information DIRECTORY"
+echo "[$(date +%H:%M:%S)]: CREATING SYMLINKS FOR THE System Scripts AND Information DIRECTORY"
 ln -s "/Library/Scripts" "../Scripts Pack Source Items/System Scripts"
 ln -s "/Volumes/Scripts Pack/Scripts Pack/About Scripts Pack/Information.scptd/Information" "../Scripts Pack Source Items/Information"
-echo "[$(date -u +%H:%M:%S)]: SYMLINKS CREATED!"
+echo "[$(date +%H:%M:%S)]: SYMLINKS CREATED!"
 
-echo "[$(date -u +%H:%M:%S)]: STARTING CREATE-DMG"
+echo "[$(date +%H:%M:%S)]: STARTING CREATE-DMG"
 ./create-dmg \
 --volname "Scripts Pack" \
 --background SPBackgroundImage.tiff \
@@ -50,6 +50,7 @@ echo "[$(date -u +%H:%M:%S)]: STARTING CREATE-DMG"
 --icon "Install.applescript" 611 261 \
 --icon "Scripts Pack" 314 261 \
 --icon "System Scripts" 208 147 \
+--eula SCRIPTSPACKEULA \
 "../Builds/$BUILDNAME" \
 "../Scripts Pack Source Items"/ && rm -R "../Scripts Pack Source Items/System Scripts" && rm -R "../Scripts Pack Source Items/Information"
-echo "[$(date -u)]: END OF BUILD SCRIPTS PACK IMAGE SCRIPT."
+echo "[$(date)]: END OF BUILD SCRIPTS PACK IMAGE SCRIPT."

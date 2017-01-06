@@ -1,0 +1,28 @@
+#!/bin/bash
+echo "#****# #****# #***#  #  #****# **#** #****#    #****# #****# #****# #   # "
+echo "#      #    * #   #  #  #    #   #   #         #    # #    # #    * #   # " 
+echo "###### ##     ###### ## ######   ##  ######    ###### ###### ##     ######" 
+echo "    ## ##     ##   # ## ##       ##      ##    ##     ##   # ##     ##   #" 
+echo "#   ## ##   # ##   # ## ##       ##  #   ##    ##     ##   # ##   # ##   #"
+echo "###### ###### ##   # ## ##       ##  ######    ##     ##   # ###### ##   #"
+echo "=========================================================================="
+echo " This will produce a disk image for the Scripts Pack at the /Builds folder"
+echo " and will automatically mount the disk image upon completion.             "
+echo "=========================================================================="
+
+cd "$(dirname "$0")"
+echo "[$(date +%H:%M:%S)]: Changing directory into the create-dmg directory"
+cd "Scripts Pack - create-dmg"
+echo "[$(date +%H:%M:%S)]: Making BuildScriptsPackImage.sh executable"
+chmod +x "BuildScriptsPackImage.sh"
+echo "[$(date +%H:%M:%S)]: Making create-dmg executable"
+chmod +x "create-dmg"
+echo "[$(date +%H:%M:%S)]: Making dmg-license.py executable"
+chmod u+x "support/dmg-license.py"
+echo "[$(date +%H:%M:%S)]: Executing disk image build script"
+./BuildScriptsPackImage.sh
+echo "[$(date +%H:%M:%S)]: Giving BuildScriptsPackImage.sh 5 seconds before continuing!"
+sleep 5
+echo "[$(date +%H:%M:%S)]: Mounting ScriptsPack.dmg"
+hdiutil attach "../Builds/ScriptsPack.dmg"
+echo "[$(date +%H:%M:%S)]: End of MAKE script. Scripts Pack should be mounted at /Volumes/Scripts Pack"
