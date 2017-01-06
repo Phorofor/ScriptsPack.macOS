@@ -3,6 +3,7 @@
 A project that I got too lazy to continue based upon users being restricted by an organisation (such as a school) through some sort of Network Account Server and the only possible way was to perform shell tasks integrated into AppleScripts to perform tasks that tweaks variables in a user's preferences.
 
 [Visit the Scripts Pack GitHub Pages site](https://phorofor.github.io/ScriptsPack.macOS/)
+
 [View Releases here](https://github.com/Phorofor/ScriptsPack.macOS/releases)
 
 ## Installing
