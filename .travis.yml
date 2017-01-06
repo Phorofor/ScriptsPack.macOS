@@ -6,9 +6,9 @@ language:
 osx_image: xcode8.2 
 
 before_script:
-  - brew update
-  - brew outdated xctool || brew upgrade xctool
-  - brew outdated python || brew upgrade python
+  #- brew update
+  #- brew outdated xctool || brew upgrade xctool
+  #- brew outdated python || brew upgrade python
 script:
   - chmod +x MAKE
   - ./MAKE
