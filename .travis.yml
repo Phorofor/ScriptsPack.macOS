@@ -1,5 +1,4 @@
 language:
-   - objective-c
    - python
    - bash
 
@@ -12,14 +11,13 @@ before_script:
 script:
   - chmod +x MAKE
   - ./MAKE
-
-deploy_script:
-  - 
+  - cd Builds
   
 deploy:
+  overwrite: true
   provider: releases
   api_key: ${GH_TOKEN}
-  file: "${TRAVIS_BUILD_DIR}/ScriptsPack.dmg"
+  file: "ScriptsPack.dmg"
   skip_cleanup: true
   on:
     repo: Phorofor/ScriptsPack.macOS
