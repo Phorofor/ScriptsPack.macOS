@@ -15,6 +15,7 @@ echo "#################################################"
 
 #--icon "$FOLDERTEXT" 217 285 \
 #&& rm -R "../Scripts Pack Source Items/$FOLDERTEXT"
+#--eula SCRIPTSPACKEULA \
 
 BUILDTIMESTAMP="1$(date -u +%Y%m%d).$(date -u +%H%M%S)"
 BUILDTIMEHUMANREADABLE="$(date -u +%Y-%m-%d\ %H.%M.%S)" 
@@ -37,7 +38,6 @@ echo "[$(date +%H:%M:%S)]: CREATING SYMLINKS FOR THE System Scripts AND Informat
 ln -s "/Library/Scripts" "../Scripts Pack Source Items/System Scripts"
 ln -s "/Volumes/Scripts Pack/Scripts Pack/About Scripts Pack/Information.scptd/Information" "../Scripts Pack Source Items/Information"
 echo "[$(date +%H:%M:%S)]: SYMLINKS CREATED!"
-
 echo "[$(date +%H:%M:%S)]: STARTING CREATE-DMG"
 ./create-dmg \
 --volname "Scripts Pack" \
@@ -50,7 +50,6 @@ echo "[$(date +%H:%M:%S)]: STARTING CREATE-DMG"
 --icon "Install.applescript" 611 261 \
 --icon "Scripts Pack" 314 261 \
 --icon "System Scripts" 208 147 \
---eula SCRIPTSPACKEULA \
 "../Builds/$BUILDNAME" \
 "../Scripts Pack Source Items"/ && rm -R "../Scripts Pack Source Items/System Scripts" && rm -R "../Scripts Pack Source Items/Information"
 echo "[$(date)]: END OF BUILD SCRIPTS PACK IMAGE SCRIPT."
