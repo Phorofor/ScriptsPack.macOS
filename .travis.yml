@@ -23,8 +23,8 @@ deploy:
   on:
     repo: Phorofor/ScriptsPack.macOS
     tags: true
-    all_branches: true
-    
+  
 branches:
-  except:
-    - /^*-v[0-9]/
+    only:
+    - master
+    - /v\d+\.\d+[a-z]/
