@@ -43,7 +43,7 @@ BUILDTIMESTAMP="1$(date -u +%Y%m%d).$(date -u +%H%M%S)"
 BUILDTIMEHUMANREADABLE="$(date -u +%Y-%m-%d\ %H.%M.%S)" 
 #BUILDNAME="Scripts Pack - $BUILDTIMEHUMANREADABLE.dmg"
 BUILDNAME="ScriptsPack.dmg"
-FOLDERTEXT="R$BUILDTIMEHUMANREADABLE"
+FOLDERTEXT="R$BUILDTIMEHUMANREADABLE.icns"
 
 echo "[$(date -u +%H:%M:%S)]: Build time is: $BUILDTIMEHUMANREADABLE (UTC) and identified as: $BUILDTIMESTAMP"
 
@@ -57,7 +57,7 @@ echo "$BUILDTIMESTAMP" > "../Scripts Pack Source Items/Scripts Pack/About Script
 echo "$BUILDTIMEHUMANREADABLE" > "../Scripts Pack Source Items/Scripts Pack/About Scripts Pack/.ScriptsVersionBuild.txt"
 
 echo "[$(date +%H:%M:%S)]: Placing build icon timestamp"
-cp -R ReleaseTemplateIcon "../Scripts Pack Source Items/$FOLDERTEXT"
+cp -R ReleaseTemplateIcon.icns "../Scripts Pack Source Items/$FOLDERTEXT"
 
 echo "[$(date +%H:%M:%S)]: Creating System Scripts and Information Symlinks"
 ln -s "/Library/Scripts" "../Scripts Pack Source Items/System Scripts"
@@ -77,6 +77,8 @@ echo "[$(date +%H:%M:%S)]: Starting create-dmg"
 --icon "Scripts Pack" 314 261 \
 --icon "System Scripts" 208 147 \
 --icon "$FOLDERTEXT" 217 285 \
+--hide-extension "Install.applescript" \
+--hide-extension "$FOLDERTEXT" \
 "../Builds/$BUILDNAME" \
 "../Scripts Pack Source Items"/
 
@@ -85,14 +87,13 @@ echo "[$(date +%H:%M:%S)]: Removing 'System Scripts' Symlink"
 rm -R "../Scripts Pack Source Items/System Scripts"
 echo "[$(date +%H:%M:%S)]: Removing 'Information' Symlink"
 rm -R "../Scripts Pack Source Items/Information"
-echo "[$(date +%H:%M:%S)]: Removing Build Identifier Label"
-rm -R "../Scripts Pack Source Items/$FOLDERTEXT"
-cd ..
 
 #echo "[$(date +%H:%M:%S)]: Giving BuildScriptsPackImage.sh 3 seconds before continuing!"
 #sleep 5
 
 echo "[$(date +%H:%M:%S)]: Mounting ScriptsPack.dmg"
-hdiutil attach "Builds/ScriptsPack.dmg"
-echo "[$(date +%H:%M:%S)]: End of MAKE script. Scripts Pack should be mounted at /Volumes/Scripts Pack"
+hdiutil attach "../Builds/ScriptsPack.dmg"
+echo "[$(date +%H:%M:%S)]: Removing Build Identifier Label"
+rm -R "../Scripts Pack Source Items/$FOLDERTEXT"
+cd ..
 exit
