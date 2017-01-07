@@ -1,1 +1,1 @@
-This is just a placeholder text as you appear to be using Scripts Pack directly from the ScriptsPack.macOS source. The build information is placed here automatically when a Scripts Pack Disk Image is produced.
+2017-01-07 02.46.20

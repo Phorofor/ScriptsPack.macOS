@@ -9,20 +9,90 @@ echo "==========================================================================
 echo " This will produce a disk image for the Scripts Pack at the /Builds folder"
 echo " and will automatically mount the disk image upon completion.             "
 echo "=========================================================================="
+echo "##########################################################################"
+echo "# Scripts Pack for macOS is maintained by <https://github.io/Phorofor>   #"
+echo "# Licensed under the BSD-2-Clause license.                               #"
+echo "##########################################################################"
+echo "# This script makes use of create-dmg by <https://github.com/andreyvit>  #"
+echo "# which is Copyright (c) 2008-2014 Andrey Tarantsov                      #" 
+echo "# create-dmg is licensed under the MIT License.                          #"
+echo "##########################################################################"
+echo "This script was executed at: $(date -u)"
 
 cd "$(dirname "$0")"
 echo "[$(date +%H:%M:%S)]: Changing directory into the create-dmg directory"
 cd "Scripts Pack - create-dmg"
-echo "[$(date +%H:%M:%S)]: Making BuildScriptsPackImage.sh executable"
-chmod +x "BuildScriptsPackImage.sh"
+
+#echo "[$(date +%H:%M:%S)]: Making BuildScriptsPackImage.sh executable"
+#chmod +x "BuildScriptsPackImage.sh"
+
 echo "[$(date +%H:%M:%S)]: Making create-dmg executable"
 chmod +x "create-dmg"
+
 echo "[$(date +%H:%M:%S)]: Making dmg-license.py executable"
 chmod u+x "support/dmg-license.py"
-echo "[$(date +%H:%M:%S)]: Executing disk image build script"
-./BuildScriptsPackImage.sh
-echo "[$(date +%H:%M:%S)]: Giving BuildScriptsPackImage.sh 5 seconds before continuing!"
-sleep 5
+
+#echo "[$(date +%H:%M:%S)]: Executing disk image build script"
+#./BuildScriptsPackImage.sh
+
+# Timestamp for build versions is in the format:
+# 1YYYYMMDD.HHMMSS where the date and time is in UTC timezone
+#--icon "$FOLDERTEXT" 217 285 \
+#&& "
+#--eula SCRIPTSPACKEULA \
+
+BUILDTIMESTAMP="1$(date -u +%Y%m%d).$(date -u +%H%M%S)"
+BUILDTIMEHUMANREADABLE="$(date -u +%Y-%m-%d\ %H.%M.%S)" 
+#BUILDNAME="Scripts Pack - $BUILDTIMEHUMANREADABLE.dmg"
+BUILDNAME="ScriptsPack.dmg"
+FOLDERTEXT="R$BUILDTIMEHUMANREADABLE"
+echo "[$(date -u +%H:%M:%S)]: Build time is: $BUILDTIMEHUMANREADABLE (UTC) and identified as: $BUILDTIMESTAMP"
+
+# Do a cleanup if these exist
+
+echo "[$(date +%H:%M:%S)]: Cleaning up existing symlinks if existing"
+rm -R "../Scripts Pack Source Items/System Scripts"
+rm -R "../Scripts Pack Source Items/Information"
+
+echo "[$(date +%H:%M:%S)]: Placing build timestamps in .ScriptsVersion.txt and .ScriptsVersionBuild.txt"
+echo "$BUILDTIMESTAMP" > "../Scripts Pack Source Items/Scripts Pack/About Scripts Pack/.ScriptsVersion.txt"
+echo "$BUILDTIMEHUMANREADABLE" > "../Scripts Pack Source Items/Scripts Pack/About Scripts Pack/.ScriptsVersionBuild.txt"
+
+#echo "[$(date +%H:%M:%S)]: Placing build icon timestamp"
+#cp -R ReleaseTemplateIcon "../Scripts Pack Source Items/$FOLDERTEXT"
+
+echo "[$(date +%H:%M:%S)]: Creating System Scripts and Information Symlinks"
+ln -s "/Library/Scripts" "../Scripts Pack Source Items/System Scripts"
+ln -s "/Volumes/Scripts Pack/Scripts Pack/About Scripts Pack/Information.scptd/Information" "../Scripts Pack Source Items/Information"
+echo "[$(date +%H:%M:%S)]: Symlinks done!"
+echo "[$(date +%H:%M:%S)]: Starting create-dmg"
+
+./create-dmg \
+--volname "Scripts Pack" \
+--background SPBackgroundImage.tiff \
+--window-pos 200 120 \
+--window-size 800 400 \
+--icon-size 64 \
+--text-size 12 \
+--icon "Information" 474 261 \
+--icon "Install.applescript" 611 261 \
+--icon "Scripts Pack" 314 261 \
+--icon "System Scripts" 208 147 \
+"../Builds/$BUILDNAME" \
+"../Scripts Pack Source Items"/
+
+echo "[$(date +%H:%M:%S)]: Removing 'System Scripts' Symlink"
+rm -R "../Scripts Pack Source Items/System Scripts"
+echo "[$(date +%H:%M:%S)]: Removing 'Information' Symlink"
+rm -R "../Scripts Pack Source Items/Information"
+echo "[$(date +%H:%M:%S)]: Removing ‘$FOLDERTEXT’ folder label"
+rm -R "../Scripts Pack Source Items/$FOLDERTEXT
+
+#echo "[$(date +%H:%M:%S)]: Giving BuildScriptsPackImage.sh 3 seconds before continuing!"
+#sleep 5
+
 echo "[$(date +%H:%M:%S)]: Mounting ScriptsPack.dmg"
 hdiutil attach "../Builds/ScriptsPack.dmg"
 echo "[$(date +%H:%M:%S)]: End of MAKE script. Scripts Pack should be mounted at /Volumes/Scripts Pack"
+cd ..
+exit
