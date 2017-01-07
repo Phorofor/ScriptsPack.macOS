@@ -79,6 +79,7 @@ echo "[$(date +%H:%M:%S)]: Starting create-dmg"
 --icon "$FOLDERTEXT" 217 285 \
 --hide-extension "Install.applescript" \
 --hide-extension "$FOLDERTEXT" \
+-—eula “SCRIPTSPACKEULA.rtf” \
 "../Builds/$BUILDNAME" \
 "../Scripts Pack Source Items"/
 
