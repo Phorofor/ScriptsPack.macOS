@@ -1,1 +1,1 @@
-2017-01-07 04.34.26
+This is a placeholder text and build timestamp information is placed here automatically when a new Scripts Pack image is generated.
