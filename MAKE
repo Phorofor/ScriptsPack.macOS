@@ -65,6 +65,8 @@ ln -s "/Volumes/Scripts Pack/Scripts Pack/About Scripts Pack/Information.scptd/I
 echo "[$(date +%H:%M:%S)]: Symlinks done!"
 echo "[$(date +%H:%M:%S)]: Starting create-dmg"
 
+#-—eula "SCRIPTSPACKEULA.rtf" \
+
 ./create-dmg \
 --volname "Scripts Pack" \
 --background SPBackgroundImage.tiff \
@@ -79,7 +81,6 @@ echo "[$(date +%H:%M:%S)]: Starting create-dmg"
 --icon "$FOLDERTEXT" 217 285 \
 --hide-extension "Install.applescript" \
 --hide-extension "$FOLDERTEXT" \
--—eula “SCRIPTSPACKEULA.rtf” \
 "../Builds/$BUILDNAME" \
 "../Scripts Pack Source Items"/
 
@@ -97,4 +98,5 @@ hdiutil attach "../Builds/ScriptsPack.dmg"
 echo "[$(date +%H:%M:%S)]: Removing Build Identifier Label"
 rm -R "../Scripts Pack Source Items/$FOLDERTEXT"
 cd ..
+echo “[$(date +%H:%M:%S)]: END OF SCRIPTS PACK DMG CREATION.”
 exit
