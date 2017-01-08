@@ -18,9 +18,9 @@ You don't need to build anything. In fact, it'll work just by dragging the Scrip
 
 ``cd ScriptsPack.macOS``
 
-``chmod +x MAKE.sh``
+``chmod +x MAKE``
 
-``./MAKE.sh``
+``./MAKE``
 
 The disk image will mount twice, the first one being for the creation of the disk image and the final one where it has been finally completed. Its output should be placed in the ``Build`` folder.
 
