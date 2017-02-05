@@ -10,7 +10,7 @@ A project that I got too lazy to continue based upon users being restricted by a
 **0.** Just run the Scripts Pack's ``Install.applescript``. If you don't feel like using that script, drag the ``Scripts Pack`` folder into ``~/Library/Scripts`` for the current user, or ``/Library/Scripts`` for all users. See [the Manual Installation page] for more details.
 
 ## Building
-You don't need to build anything. In fact, it'll work just by dragging the Scripts Pack folder anywhere. For fun, you can Scripts Pack's create-dmg script. 
+You don't need to build anything. In fact, it'll work just by dragging the Scripts Pack folder anywhere. For fun, you can createScripts Pack's create-dmg script. Also, Travis-ci automatically does this.
 
 **To build the disk image:**
 
